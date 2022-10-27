@@ -1,15 +1,186 @@
-# 원티드 프리온보딩 프론트엔드 코스
+# 원티드 프리온보딩 프론트엔드 3팀 - Assignment #1
 
-# 1. 배포 링크
+[사전 과제](https://github.com/walking-sunset/selection-task)로 구현한 Todo 앱에 대한 **Best Practice**
 
-### 📌 https://todoapp365.netlify.app
+>[조은지](https://github.com/Joeunji0119/)(팀장)
+> [김창희](https://github.com/PiperChang/) [문지원](https://github.com/moonkorea00/) [박정민](https://github.com/ono212/) [이상민](https://github.com/dltkdals224/) [이지원](https://github.com/365support/) [조수진](https://github.com/suzz-in/) [고영훈](https://github.com/YeonghunKO/)
 
-### [ 📝 사전과제 블로깅](https://velog.io/@support/%EC%9B%90%ED%8B%B0%EB%93%9C-%ED%94%84%EB%A6%AC%EC%98%A8%EB%B3%B4%EB%94%A9-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EC%82%AC%EC%A0%84%EA%B3%BC%EC%A0%9C)
+## **배포 주소**
 
-# 2. 프로젝트 구조
+📌  [https://todoapp365.netlify.app](https://todoapp365.netlify.app)
 
-```bash
+>테스트 계정 <br/> 
+> 아이디 : test00@test.com 비밀번호 : password!@
 
+## 기능 시연 GIF
+### ⭐️ 로그인 , 회원가입
+<img src="https://user-images.githubusercontent.com/86206374/196597041-76df2fad-5b60-4d06-b9d7-d161e55f964c.gif" width="500" height="450"/>
+
+### ⭐️ Todo List
+<img src="https://user-images.githubusercontent.com/86206374/196597578-733c4e83-6490-4539-b98b-66ce709d7b53.gif" width="500" height="450"/>
+
+## 목차
+
+- [리팩토링](#리팩토링)
+- [폴더 구조](#폴더-구조)
+- [팀 코드 컨벤션](#팀-코드-컨벤션)
+
+
+
+## 리팩토링
+
+#### 라이브 코드리뷰로 각자 구현한 코드에 대한 피드백 및 리팩토링 후 Best Practice를 채택했습니다.
+채택 기준
+
+1. 기능작동
+2. 최적화를 위한 메모리제이션 메소드 사용
+3. 컴포넌트 나누기
+4. 재사용가능한 모듈
+
+- [ ] React Suspense + dynamic import로 lazy loading
+
+- 변경을 하는 부분에서 suspense를 Route 전체를 감싸주어야 하는지, Todo 컴포넌트만 감싸줘야하는지 고민을 했습니다. <br/> 
+오히려 lazy loading 시 더 느려질 수 있음을 고려하여, Todo 컴포넌트에만 suspense를 적용시켰습니다.
+
+```javascript
+const Todo = lazy(() => import("./pages/Todo"));
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Auth />} />
+
+      <Route
+        path="/todo"
+        element={
+          <Suspense fallback={<div css={mainContainer}>...로딩중</div>}>
+            <Todo />
+          </Suspense>
+        }
+      />
+    </Routes>
+  );
+}
+```
+
+참고 파일: [App.jsx](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/App.jsx)
+
+<br />
+
+- [ ] useAuth hook으로 사용자 리다이렉트 처리
+
+- 토큰에 다른 값이 들어갔을 때를 방지하기 위해서 토큰이 맞는지 확인하는 과정입니다. <br/> 
+토큰이 맞는지 확인하는 api가 없기 때문에 토큰이 필요한 api에 요청하고 결과에 따라서 처리했습니다. 
+
+```javascript
+const useAuth = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getData = () => {
+      getTodoApi()
+        .then((res) => {
+          navigate("/todo");
+        })
+        .catch((err) => {
+          navigate("/");
+        });
+    };
+    getData();
+  }, []);
+
+  return;
+};
+```
+
+<br />
+
+- [ ] 컴포넌트 style 관련 디렉토리  개선
+
+- 상태값을 받아와 사용하는 css 가 태그 안에 존재해 보기 힘든 부분이 있어 <br/>  emotion/styled를 통해 추출하고 css 파일을 분리해서 확장 가능성이 좋게 수정했습니다.
+
+
+```js
+// TodoItem.jsx
+<todoItemStyle.CheckBox isCompleted={list.isCompleted}>
+		{list.isCompleted && <MdDone />}
+</todoItemStyle.CheckBox>
+```
+
+```javascript
+export const CheckBox = styled.div`
+  border: ${({ isCompleted }) => (isCompleted ? ` 1px solid ${COLOR.White100}` : "")};
+`;
+```
+
+> 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
+
+<br />
+
+- [ ] useValidatedEmail/useValidatedPassword 함수에서 중복되는 로직을 useValidate hook으로 병합
+ 
+- `useValidate` 커스텀 훅을 사용하여 이메일과 비밀번호의 유효성 검사를 해주었습니다.<br/>  각각 이메일과 비밀번호의 유효성 검사를 할 때 로직을 재사용할 수 있도록 `type`을 인자로 받아 사용할 수 있도록 훅으로 분리했습니다.
+
+
+> 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
+
+<br />
+
+- [ ] 낙관적 업데이트 context API로 개선
+
+> #### 리팩토링 전
+
+- TodoList 업데이트를 하는 함수가 여러 폴더에 있었습니다.
+- `context api` + `useReducer`를 이용해서 업데이트함수를 `todoItem.jsx`로 모았습니다.
+    - 한 곳에서 관리하기 때문에 유지보수가 편해졌습니다.
+    - props drlling을 하지 않아도 됩니다.
+
+```javascript
+// todoList.jsx
+const TodoList = () => {
+  const todoData = useContext(todoContext);
+  const dispatch = useContext(dispatchContext);
+
+  return (
+    <ul css={todoWrapper}>
+      {todoData?.map((list, id) => (
+        <TodoItem key={list.id} list={list} />
+      ))}
+    </ul>
+  );
+};
+
+// todoItem.jsx
+const TodoItem = ({ list }) => {
+  const dispatch = useContext(dispatchContext);
+
+  const handleTodoUpdate = useCallback(
+    content => {
+      updateTodoApi(content.id, content.todo, content.isCompleted)
+        .then(res => {
+          dispatch({ type: 'EDIT', todo: res.data });
+        })
+        .catch(err => {
+          console.log('주 에러 : ', err);
+        });
+    },
+    [list, content]
+  );
+...
+}
+```
+
+참고 파일: src/component/Todo
+
+- [ ] 시멘틱한 마크업
+
+> 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
+
+
+## **폴더 구조**
+
+
+```
 📦 src
 ├── 📂 api
 ├── 📂 component
@@ -29,77 +200,28 @@
 
 ```
 
-# 3. 기능 시연 GIF
 
-## ⭐️ 로그인 , 회원가입
+## 팀 코드 컨벤션
 
-<img src="https://user-images.githubusercontent.com/86206374/196597041-76df2fad-5b60-4d06-b9d7-d161e55f964c.gif" width="500" height="450"/>
+- [ ] git commit message 컨벤션
 
-✅ Assignment1
+| 커밋명 | 내용 |
+| --- | --- |
+| Feat | 파일, 폴더, 새로운 기능 추가 |
+| Fix | 버그 수정 |
+| Docs | 제품 코드 수정 없음 |
+| Style | 코드 형식, 정렬, 주석 등의 변경 |
+| Refactor | 코드 리팩토링 |
+| Test | 테스트 코드 추가 |
+| Chore | 환경설정, 빌드 업무, 패키지 매니저 설정등.. |
+| Hotfix | 치명적이거나 급한 버그 수정 |
 
-- 이메일과 비밀번호의 유효성 검사기능 구현 (이메일 조건: @ 포함, 비밀번호 조건: 8자 이상)
-- 입력된 이메일과 비밀번호가 위 조건을 만족할 때만 버튼 활성화
+- [ ] branch 컨벤션
 
-✅ Assignment2
-
-- 로그인 성공시 todo 페이지로 리다이렉트
-- 응답받은 JWT는 로컬 스토리지에 저장
-
-✅ Assignment3
-
-- 로컬 스토리지에 토큰이 있는 상태로 / 페이지에 접속한다면 /todo 경로로 리다이렉트
-- 로컬 스토리지에 토큰이 없는 상태로 /todo페이지에 접속한다면 / 경로로 리다이렉트
-
-## ⭐️ Todo List
-
-<img src="https://user-images.githubusercontent.com/86206374/196597578-733c4e83-6490-4539-b98b-66ce709d7b53.gif" width="500" height="450"/>
-
-✅ Assignment4
-
-- /todo경로에 접속하면 투두 리스트의 목록 확인
-- 투두 리스트의 내용과 완료 여부 표시
-- 입력창과 추가 버튼이 있고, 추가 버튼을 누르면 입력창의 내용이 새로운 투두 리스트로 추가
-
-✅ Assignment5
-
-- 투두 리스트의 수정, 삭제 기능 구현
-- 투두 리스트의 개별 아이템 우측에 수정버튼이 존재하고 해당 버튼을 누르면 수정모드가 활성화 및 내용 수정
-- 수정모드에서는 개별 아이템의 우측에 제출버튼과 취소버튼이 표시되며 해당 버튼을 통해서 수정 내용을 제출 및 취소
-- 투두 리스트의 개별 아이템 우측에 삭제버튼이 존재하고 해당 버튼을 누르면 투두 리스트가 삭제
-
-📌 추가 구현
-
-- 로그아웃 (로컬 스토리지에서 삭제)
-
-## ⭐️ 성능 최적화
-
-<img src="https://user-images.githubusercontent.com/86206374/196598915-73372383-cccb-414a-b16b-78a9f165ffab.gif" width="500" height="450"/>
-
-# 4. 프로젝트 설치 및 실행
-
-1. root 경로에 .env 파일 생성
-
-```
-REACT_APP_API_URL=https://pre-onboarding-selection-task.shop
-```
-
-2. 프로젝트 패키지 설치
-
-```
-npm install
-```
-
-3. 프로젝트 실행
-
-```
-npm start
-```
-
-# 5. 사용 라이브러리
-
-Axios
-, react-router-dom
-
-Emotion ,
-React-Icons ,
-react-toastify
+| 브랜치명 | 내용 |
+| --- | --- |
+| feature | 파일, 폴더, 새로운 기능 추가 |
+| fix | 버그 수정 |
+| docs | 제품 코드 수정 없음 |
+| refactor | 코드 리팩토링 |
+| hotfix | 치명적이거나 급한 버그 수정 |
