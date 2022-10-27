@@ -17,11 +17,11 @@
 
 ## 📖 목차
 
-- [기능 시연](#기능-시연)
-- [Best Practice 선정 이유](#Best-Practice)
-- [리팩토링](#리팩토링)
-- [폴더 구조](#폴더-구조)
-- [팀 코드 컨벤션](#팀-코드-컨벤션)
+- [기능 시연](#🌠-기능-시연-GIF)
+- [Best Practice 선정 이유](#👍-Best-Practice-채택-기준)
+- [리팩토링](#✏️-리팩토링)
+- [폴더 구조](#📦-폴더-구조)
+- [팀 코드 컨벤션](#👨‍👨‍👧‍👧-팀-코드-컨벤션)
 
 ## 🌠 기능 시연 GIF
 ###  로그인 , 회원가입
@@ -34,8 +34,8 @@
 <img src="https://user-images.githubusercontent.com/86206374/196598915-73372383-cccb-414a-b16b-78a9f165ffab.gif" width="500" height="450"/>
 
 
-## 👍 라이브 코드리뷰로 각자 구현한 코드에 대한 피드백 및 리팩토링 후 Best Practice를 채택했습니다.
-채택 기준
+## 👍 Best Practice 채택 기준
+라이브 코드리뷰로 각자 구현한 코드에 대한 피드백 및 리팩토링 후 Best Practice를 채택했습니다.
 
 - 불필요한 리렌더링 방지로 퍼포먼스 최적화 - useref, usecallback, usememo, memo
 - 공용 인스턴스 기반 비동기 통신 함수 관리
@@ -188,7 +188,7 @@ const TodoItem = ({ list }) => {
 > 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
 
 
-## 📦 **폴더 구조**
+## 📦 폴더 구조
 
 
 ```
