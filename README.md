@@ -17,11 +17,11 @@
 
 ## 📖 목차
 
-- [기능 시연 GIF](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#-%EA%B8%B0%EB%8A%A5-%EC%8B%9C%EC%97%B0-gif)
-- [Best Practice 선정 이유](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#-best-practice-%EC%B1%84%ED%83%9D-%EA%B8%B0%EC%A4%80)
-- [리팩토링](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#%EF%B8%8F-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81)
-- [폴더 구조](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0)
-- [팀 코드 컨벤션](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#-%ED%8C%80-%EC%BD%94%EB%93%9C-%EC%BB%A8%EB%B2%A4%EC%85%98)
+- [기능 시연 GIF](#-기능-시연-gif)
+- [Best Practice 선정 이유](#-best-practice-채택-기준)
+- [리팩토링](#-리팩토링)
+- [폴더 구조](#-폴더-구조)
+- [팀 코드 컨벤션](#-팀-코드-컨벤션)
 
 <br />
 
