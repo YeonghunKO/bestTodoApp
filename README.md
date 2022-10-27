@@ -96,8 +96,6 @@ function App() {
 }
 ```
 
->참고 파일: [App.jsx](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/App.jsx)
-
 <br />
 
 - [ ] useAuth hook으로 사용자 리다이렉트 처리
@@ -146,8 +144,6 @@ export const CheckBox = styled.div`
 `;
 ```
 
-> 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
-
 <br />
 
 - [ ] useValidatedEmail/useValidatedPassword 함수에서 중복되는 로직을 useValidate hook으로 병합
@@ -155,7 +151,7 @@ export const CheckBox = styled.div`
 - `useValidate` 커스텀 훅을 사용하여 이메일과 비밀번호의 유효성 검사를 해주었습니다.<br/>  각각 이메일과 비밀번호의 유효성 검사를 할 때 로직을 재사용할 수 있도록 `type`을 인자로 받아 사용할 수 있도록 훅으로 분리했습니다.
 
 
-> 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
+> 참고 파일: [useValidate.js](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/blob/main/src/hooks/useValidate.js)
 
 <br />
 
@@ -202,12 +198,11 @@ const TodoItem = ({ list }) => {
 ...
 }
 ```
-
-참고 파일: src/component/Todo
+<br />
 
 - [ ] 시멘틱한 마크업
 
-> 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
+<br />
 
 ## 📦 폴더 구조
 
