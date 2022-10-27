@@ -5,43 +5,48 @@
 >[조은지](https://github.com/Joeunji0119/)(팀장)
 > [김창희](https://github.com/PiperChang/) [문지원](https://github.com/moonkorea00/) [박정민](https://github.com/ono212/) [이상민](https://github.com/dltkdals224/) [이지원](https://github.com/365support/) [조수진](https://github.com/suzz-in/) [고영훈](https://github.com/YeonghunKO/)
 
-## **배포 주소**
+📆 프로젝트 기간 : 2022년 10월 26일 ~ 2022년 10월 27일
+
+
+## 📚 **배포 주소**
 
 📌  [https://todoapp365.netlify.app](https://todoapp365.netlify.app)
 
 >테스트 계정 <br/> 
 > 아이디 : test00@test.com 비밀번호 : password!@
 
-## 기능 시연 GIF
-### ⭐️ 로그인 , 회원가입
-<img src="https://user-images.githubusercontent.com/86206374/196597041-76df2fad-5b60-4d06-b9d7-d161e55f964c.gif" width="500" height="450"/>
+## 📖 목차
 
-### ⭐️ Todo List
-<img src="https://user-images.githubusercontent.com/86206374/196597578-733c4e83-6490-4539-b98b-66ce709d7b53.gif" width="500" height="450"/>
-
-### ⭐️ 성능 최적화
-<img src="https://user-images.githubusercontent.com/86206374/196598915-73372383-cccb-414a-b16b-78a9f165ffab.gif" width="500" height="450"/>
-
-
-## 목차
-
+- [기능 시연](#기능-시연)
+- [Best Practice 선정 이유](#Best-Practice)
 - [리팩토링](#리팩토링)
 - [폴더 구조](#폴더-구조)
 - [팀 코드 컨벤션](#팀-코드-컨벤션)
 
+## 🌠 기능 시연 GIF
+###  로그인 , 회원가입
+<img src="https://user-images.githubusercontent.com/86206374/196597041-76df2fad-5b60-4d06-b9d7-d161e55f964c.gif" width="500" height="450"/>
+
+###  Todo List
+<img src="https://user-images.githubusercontent.com/86206374/196597578-733c4e83-6490-4539-b98b-66ce709d7b53.gif" width="500" height="450"/>
+
+###  성능 최적화
+<img src="https://user-images.githubusercontent.com/86206374/196598915-73372383-cccb-414a-b16b-78a9f165ffab.gif" width="500" height="450"/>
 
 
-## 리팩토링
-
-#### 라이브 코드리뷰로 각자 구현한 코드에 대한 피드백 및 리팩토링 후 Best Practice를 채택했습니다.
+## 👍 라이브 코드리뷰로 각자 구현한 코드에 대한 피드백 및 리팩토링 후 Best Practice를 채택했습니다.
 채택 기준
 
-1. 불필요한 리렌더링 방지로 퍼포먼스 최적화 - useref, usecallback, usememo, memo
-2. 공용 인스턴스 기반 비동기 통신 함수 관리
-3. 비동기 통신 후 정합성을 고려한 낙관적 업데이트
-4. 재사용되는 코드는 커스텀 훅으로 분리해서 로직 최소화
-5. 직관적인 폴더구조
-6. sourcemap 제거로 내부코드 난독화, 빌드시 메모리 부족 이슈 해결
+- 불필요한 리렌더링 방지로 퍼포먼스 최적화 - useref, usecallback, usememo, memo
+- 공용 인스턴스 기반 비동기 통신 함수 관리
+- 비동기 통신 후 정합성을 고려한 낙관적 업데이트
+- 재사용되는 코드는 커스텀 훅으로 분리해서 로직 최소화
+- 직관적인 폴더구조
+- sourcemap 제거로 내부코드 난독화, 빌드시 메모리 부족 이슈 해결
+
+
+## ✏️ 리팩토링
+
 
 - [ ] React Suspense + dynamic import로 lazy loading
 
@@ -183,7 +188,7 @@ const TodoItem = ({ list }) => {
 > 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
 
 
-## **폴더 구조**
+## 📦 **폴더 구조**
 
 
 ```
@@ -207,7 +212,7 @@ const TodoItem = ({ list }) => {
 ```
 
 
-## 팀 코드 컨벤션
+## 👨‍👨‍👧‍👧 팀 코드 컨벤션
 
 - [ ] git commit message 컨벤션
 
@@ -232,7 +237,7 @@ const TodoItem = ({ list }) => {
 | refactor | 코드 리팩토링 |
 | hotfix | 치명적이거나 급한 버그 수정 |
 
-## 프로젝트 설치 및 실행
+## 👩‍💻 프로젝트 설치 및 실행
 
 1. root 경로에 .env 파일 생성
 
@@ -252,7 +257,7 @@ npm install
 npm start
 ```
 
-## 사용 라이브러리
+## 📌 사용 라이브러리
 
 Axios
 , react-router-dom
