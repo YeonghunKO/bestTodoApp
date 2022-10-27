@@ -17,40 +17,48 @@
 
 ## 📖 목차
 
-- [기능 시연](#🌠-기능-시연-GIF)
-- [Best Practice 선정 이유](#👍-Best-Practice-채택-기준)
-- [리팩토링](#✏️-리팩토링)
-- [폴더 구조](#📦-폴더-구조)
-- [팀 코드 컨벤션](#👨‍👨‍👧‍👧-팀-코드-컨벤션)
+- [기능 시연 GIF](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#-%EA%B8%B0%EB%8A%A5-%EC%8B%9C%EC%97%B0-gif)
+- [Best Practice 선정 이유](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#-best-practice-%EC%B1%84%ED%83%9D-%EA%B8%B0%EC%A4%80)
+- [리팩토링](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#%EF%B8%8F-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81)
+- [폴더 구조](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0)
+- [팀 코드 컨벤션](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/edit/main/README.md#-%ED%8C%80-%EC%BD%94%EB%93%9C-%EC%BB%A8%EB%B2%A4%EC%85%98)
+
+<br />
 
 ## 🌠 기능 시연 GIF
+
 ###  로그인 , 회원가입
+
 <img src="https://user-images.githubusercontent.com/86206374/196597041-76df2fad-5b60-4d06-b9d7-d161e55f964c.gif" width="500" height="450"/>
 
 ###  Todo List
+
 <img src="https://user-images.githubusercontent.com/86206374/196597578-733c4e83-6490-4539-b98b-66ce709d7b53.gif" width="500" height="450"/>
 
 ###  성능 최적화
+
 <img src="https://user-images.githubusercontent.com/86206374/196598915-73372383-cccb-414a-b16b-78a9f165ffab.gif" width="500" height="450"/>
 
+<br />
 
 ## 👍 Best Practice 채택 기준
+
 라이브 코드리뷰로 각자 구현한 코드에 대한 피드백 및 리팩토링 후 Best Practice를 채택했습니다.
 
-- 불필요한 리렌더링 방지로 퍼포먼스 최적화 - useref, usecallback, usememo, memo
+- 불필요한 리렌더링 방지로 퍼포먼스 최적화 - useRef, useCallback, useMemo, memo
 - 공용 인스턴스 기반 비동기 통신 함수 관리
 - 비동기 통신 후 정합성을 고려한 낙관적 업데이트
 - 재사용되는 코드는 커스텀 훅으로 분리해서 로직 최소화
 - 직관적인 폴더구조
 - sourcemap 제거로 내부코드 난독화, 빌드시 메모리 부족 이슈 해결
 
+<br />
 
 ## ✏️ 리팩토링
 
-
 - [ ] React Suspense + dynamic import로 lazy loading
 
-- 변경을 하는 부분에서 suspense를 Route 전체를 감싸주어야 하는지, Todo 컴포넌트만 감싸줘야하는지 고민을 했습니다. <br/> 
+- 변경을 하는 부분에서 suspense를 Route 전체를 감싸주어야 하는지, Todo 컴포넌트만 감싸줘야하는지 고민을 했습니다. 
 오히려 lazy loading 시 더 느려질 수 있음을 고려하여, Todo 컴포넌트에만 suspense를 적용시켰습니다.
 
 ```javascript
@@ -74,7 +82,7 @@ function App() {
 }
 ```
 
-참고 파일: [App.jsx](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/App.jsx)
+>참고 파일: [App.jsx](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/App.jsx)
 
 <br />
 
@@ -187,9 +195,7 @@ const TodoItem = ({ list }) => {
 
 > 참고 파일: [src/api/client.js](https://github.com/365support/wanted-pre-onboarding-frontend/blob/main/src/api/client.js)
 
-
 ## 📦 폴더 구조
-
 
 ```
 📦 src
@@ -211,6 +217,7 @@ const TodoItem = ({ list }) => {
 
 ```
 
+<br />
 
 ## 👨‍👨‍👧‍👧 팀 코드 컨벤션
 
@@ -236,6 +243,8 @@ const TodoItem = ({ list }) => {
 | docs | 제품 코드 수정 없음 |
 | refactor | 코드 리팩토링 |
 | hotfix | 치명적이거나 급한 버그 수정 |
+
+<br />
 
 ## 👩‍💻 프로젝트 설치 및 실행
 
