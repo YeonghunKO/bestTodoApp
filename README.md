@@ -20,12 +20,11 @@
 
 ## 🔑 기술 스택 및 사용 라이브러리
 
-<center><img alt="HTML5" src ="https://img.shields.io/badge/HTML5-E34F26?&style=flat&logo=HTML5&logoColor=white"/><img alt="CSS3" src ="https://img.shields.io/badge/CSS3-1572B6?&style=flat&logo=CSS3&logoColor=white"/><img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E?&style=flat&logo=JavaScript&logoColor=white"/><img alt="React" src ="https://img.shields.io/badge/React-61DAFB?&style=flat&logo=React&logoColor=white"/><img alt="Axios" src ="https://img.shields.io/badge/-Axios-5A29E4?&style=flat&logo=Axios&logoColor=white"/><img alt="React Router Dom" src ="https://img.shields.io/badge/React_Router_DOM-CA4245?&style=flat&logo=ReactRouter&logoColor=white"/>
-</center>
+<img alt="HTML5" src ="https://img.shields.io/badge/HTML5-E34F26?&style=flat&logo=HTML5&logoColor=white"/><img alt="CSS3" src ="https://img.shields.io/badge/CSS3-1572B6?&style=flat&logo=CSS3&logoColor=white"/><img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E?&style=flat&logo=JavaScript&logoColor=white"/><img alt="React" src ="https://img.shields.io/badge/React-61DAFB?&style=flat&logo=React&logoColor=white"/><img alt="Axios" src ="https://img.shields.io/badge/-Axios-5A29E4?&style=flat&logo=Axios&logoColor=white"/><img alt="React Router Dom" src ="https://img.shields.io/badge/React_Router_DOM-CA4245?&style=flat&logo=ReactRouter&logoColor=white"/>
 
-<center><img alt="Emotion" src ="https://img.shields.io/badge/Emotion-512BD4?&style=flat&logoColor=white"/><img alt="React-Icons" src ="https://img.shields.io/badge/React_Icons-FF3366?&style=flat&logoColor=white"/><img alt="react-toastify" src ="https://img.shields.io/badge/react_toastify-0ABF53?&style=flat&logoColor=white"/></center>
+<img alt="Emotion" src ="https://img.shields.io/badge/Emotion-512BD4?&style=flat&logoColor=white"/><img alt="React-Icons" src ="https://img.shields.io/badge/React_Icons-FF3366?&style=flat&logoColor=white"/><img alt="react-toastify" src ="https://img.shields.io/badge/react_toastify-0ABF53?&style=flat&logoColor=white"/>
 
-<center><img alt="Git" src ="https://img.shields.io/badge/Git-F05032?&style=flat&logo=Git&logoColor=white"/><img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717?&style=flat&logo=GitHub&logoColor=white"/><img alt="Notion" src ="https://img.shields.io/badge/Notion-000000?&style=flat&logo=Notion&logoColor=white"/></center>
+<img alt="Git" src ="https://img.shields.io/badge/Git-F05032?&style=flat&logo=Git&logoColor=white"/><img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717?&style=flat&logo=GitHub&logoColor=white"/><img alt="Notion" src ="https://img.shields.io/badge/Notion-000000?&style=flat&logo=Notion&logoColor=white"/>
 
 <br />
 
