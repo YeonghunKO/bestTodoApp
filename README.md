@@ -19,6 +19,10 @@
 ### ⭐️ Todo List
 <img src="https://user-images.githubusercontent.com/86206374/196597578-733c4e83-6490-4539-b98b-66ce709d7b53.gif" width="500" height="450"/>
 
+### ⭐️ 성능 최적화
+<img src="https://user-images.githubusercontent.com/86206374/196598915-73372383-cccb-414a-b16b-78a9f165ffab.gif" width="500" height="450"/>
+
+
 ## 목차
 
 - [리팩토링](#리팩토링)
