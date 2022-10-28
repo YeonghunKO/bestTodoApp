@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /** @jsxImportSource @emotion/react */
 import { memo, useCallback, useContext, useState } from "react";
 import { MdDone } from "@react-icons/all-files/md/MdDone";
@@ -6,6 +7,7 @@ import notice from "../../../utils/noticeUtils";
 import * as todoItemStyle from "./style";
 import { dispatchContext } from "../../../context/TodoContext";
 import { deleteTodoApi, updateTodoApi } from "../../../api/todo";
+import PropTypes from "prop-types";
 
 const TodoItem = ({ list }) => {
   const [modifyToggle, setModifyToggle] = useState(false);
@@ -111,3 +113,12 @@ const TodoItem = ({ list }) => {
 };
 
 export default memo(TodoItem);
+
+TodoItem.propTypes = {
+  list: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    isCompleted: PropTypes.bool.isRequired,
+    todo: PropTypes.string.isRequired,
+    userId: PropTypes.number.isRequired,
+  }),
+};
