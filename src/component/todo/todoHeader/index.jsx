@@ -1,7 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { useNavigate } from "react-router";
+
 import { TOKEN_STORAGE_KEY } from "../../../constants/storage";
 import { removeItem } from "../../../utils/storage";
+
 import { todoHeaderLabelCss, todoHeaderLogoutBtnCss } from "./style";
 
 const TodoHeader = () => {
@@ -13,7 +15,9 @@ const TodoHeader = () => {
       <button
         css={todoHeaderLogoutBtnCss}
         onClick={() => {
+
           removeItem(TOKEN_STORAGE_KEY);
+
           navigate("/");
         }}
       >
