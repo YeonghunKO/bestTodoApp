@@ -78,7 +78,7 @@ const Login = ({ isShown, onOpen }) => {
 
 export default Login;
 
-SignUp.propTypes = {
+Login.propTypes = {
   isShown: PropTypes.bool,
   onOpen: PropTypes.func,
 };
