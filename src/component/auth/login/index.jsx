@@ -11,7 +11,6 @@ import { setItem } from "../../../utils/storage";
 import { TOKEN_STORAGE_KEY } from "../../../constants/storage";
 import PropTypes from "prop-types";
 
-
 const Login = ({ isShown, onOpen }) => {
   const navigate = useNavigate();
   const {

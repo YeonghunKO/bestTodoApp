@@ -15,7 +15,6 @@ const TodoHeader = () => {
       <button
         css={todoHeaderLogoutBtnCss}
         onClick={() => {
-
           removeItem(TOKEN_STORAGE_KEY);
 
           navigate("/");

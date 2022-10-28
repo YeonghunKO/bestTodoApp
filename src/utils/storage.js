@@ -1,4 +1,3 @@
-
 const storage = localStorage;
 
 const getItem = (key) => {
@@ -16,4 +15,3 @@ const removeItem = (keyword) => {
 };
 
 export { getItem, setItem, removeItem };
-
