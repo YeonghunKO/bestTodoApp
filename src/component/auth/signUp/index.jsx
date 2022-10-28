@@ -5,6 +5,7 @@ import { signUpApi } from "../../../api/auth";
 import useSignForm from "../../../hooks/useSignForm";
 import * as authSytle from "../authStyle";
 import { signUperrorWrapper, signUplabelCss } from "./style";
+import PropTypes from "prop-types";
 
 const SignUp = ({ onOpen, onClose }) => {
   const {
@@ -72,3 +73,8 @@ const SignUp = ({ onOpen, onClose }) => {
 };
 
 export default SignUp;
+
+SignUp.propTypes = {
+  onOpen: PropTypes.func,
+  onClose: PropTypes.func,
+};

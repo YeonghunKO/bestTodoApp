@@ -8,6 +8,7 @@ import * as authSytle from "../authStyle";
 import { LoginContainer, loginErrorWrapper, loginLabelCss } from "./style";
 import { setItem } from "../../../utils/storage";
 import { TOKEN_STORAGE_KEY } from "../../../constants/storage";
+import PropTypes from "prop-types";
 
 const Login = ({ isShown, onOpen }) => {
   const navigate = useNavigate();
@@ -76,3 +77,8 @@ const Login = ({ isShown, onOpen }) => {
 };
 
 export default Login;
+
+SignUp.propTypes = {
+  isShown: PropTypes.bool,
+  onOpen: PropTypes.func,
+};
