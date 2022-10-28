@@ -255,8 +255,6 @@ const TodoItem = ({ list }) => {
 import PropTypes from "prop-types";
 
 const TodoItem = ({ list }) => {
-  const [modifyToggle, setModifyToggle] = useState(false);
-  const [content, setContent] = useState(list);
   ...
 }
 
