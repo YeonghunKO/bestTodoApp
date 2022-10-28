@@ -2,7 +2,7 @@
 
 [사전 과제](https://github.com/walking-sunset/selection-task)로 구현한 Todo 앱에 대한 **Best Practice**
 
->[조은지](https://github.com/Joeunji0119/)(팀장)
+> [조은지](https://github.com/Joeunji0119/)(팀장)
 > [김창희](https://github.com/PiperChang/) [문지원](https://github.com/moonkorea00/) [박정민](https://github.com/ono212/) [이상민](https://github.com/dltkdals224/) [이지원](https://github.com/365support/) [조수진](https://github.com/suzz-in/) [고영훈](https://github.com/YeonghunKO/)
 
 📆 프로젝트 기간 : 2022년 10월 26일 ~ 2022년 10월 27일
@@ -11,9 +11,9 @@
 
 ## 📚 **배포 주소**
 
-📌  [https://todoapp365.netlify.app](https://todoapp365.netlify.app)
+📌 [https://todoapp365.netlify.app](https://todoapp365.netlify.app)
 
->테스트 계정 <br/> 
+> 테스트 계정 <br/>
 > 아이디 : test00@test.com 비밀번호 : password!@
 
 <br />
@@ -41,15 +41,15 @@
 
 ## 🌠 기능 시연 GIF
 
-###  로그인 , 회원가입
+### 로그인 , 회원가입
 
 <img src="https://user-images.githubusercontent.com/86206374/196597041-76df2fad-5b60-4d06-b9d7-d161e55f964c.gif" width="500" height="450"/>
 
-###  Todo List
+### Todo List
 
 <img src="https://user-images.githubusercontent.com/86206374/196597578-733c4e83-6490-4539-b98b-66ce709d7b53.gif" width="500" height="450"/>
 
-###  성능 최적화
+### 성능 최적화
 
 <img src="https://user-images.githubusercontent.com/86206374/196598915-73372383-cccb-414a-b16b-78a9f165ffab.gif" width="500" height="450"/>
 
@@ -72,8 +72,8 @@
 
 - [ ] React Suspense + dynamic import로 lazy loading
 
-- 변경을 하는 부분에서 suspense를 Route 전체를 감싸주어야 하는지, Todo 컴포넌트만 감싸줘야하는지 고민을 했습니다. 
-오히려 lazy loading 시 더 느려질 수 있음을 고려하여, Todo 컴포넌트에만 suspense를 적용시켰습니다.
+- 변경을 하는 부분에서 suspense를 Route 전체를 감싸주어야 하는지, Todo 컴포넌트만 감싸줘야하는지 고민을 했습니다.
+  오히려 lazy loading 시 더 느려질 수 있음을 고려하여, Todo 컴포넌트에만 suspense를 적용시켰습니다.
 
 ```javascript
 const Todo = lazy(() => import("./pages/Todo"));
@@ -100,8 +100,8 @@ function App() {
 
 - [ ] useAuth hook으로 사용자 리다이렉트 처리
 
-- 토큰에 다른 값이 들어갔을 때를 방지하기 위해서 토큰이 맞는지 확인하는 과정입니다. <br/> 
-토큰이 맞는지 확인하는 api가 없기 때문에 토큰이 필요한 api에 요청하고 결과에 따라서 처리했습니다. 
+- 토큰에 다른 값이 들어갔을 때를 방지하기 위해서 토큰이 맞는지 확인하는 과정입니다. <br/>
+  토큰이 맞는지 확인하는 api가 없기 때문에 토큰이 필요한 api에 요청하고 결과에 따라서 처리했습니다.
 
 ```javascript
 const useAuth = () => {
@@ -126,15 +126,14 @@ const useAuth = () => {
 
 <br />
 
-- [ ] 컴포넌트 style 관련 디렉토리  개선
+- [ ] 컴포넌트 style 관련 디렉토리 개선
 
-- 상태값을 받아와 사용하는 css 가 태그 안에 존재해 보기 힘든 부분이 있어 <br/>  emotion/styled를 통해 추출하고 css 파일을 분리해서 확장 가능성이 좋게 수정했습니다.
-
+- 상태값을 받아와 사용하는 css 가 태그 안에 존재해 보기 힘든 부분이 있어 <br/> emotion/styled를 통해 추출하고 css 파일을 분리해서 확장 가능성이 좋게 수정했습니다.
 
 ```js
 // TodoItem.jsx
 <todoItemStyle.CheckBox isCompleted={list.isCompleted}>
-		{list.isCompleted && <MdDone />}
+  {list.isCompleted && <MdDone />}
 </todoItemStyle.CheckBox>
 ```
 
@@ -147,9 +146,8 @@ export const CheckBox = styled.div`
 <br />
 
 - [ ] useValidatedEmail/useValidatedPassword 함수에서 중복되는 로직을 useValidate hook으로 병합
- 
-- `useValidate` 커스텀 훅을 사용하여 이메일과 비밀번호의 유효성 검사를 해주었습니다.<br/>  각각 이메일과 비밀번호의 유효성 검사를 할 때 로직을 재사용할 수 있도록 `type`을 인자로 받아 사용할 수 있도록 훅으로 분리했습니다.
 
+- `useValidate` 커스텀 훅을 사용하여 이메일과 비밀번호의 유효성 검사를 해주었습니다.<br/> 각각 이메일과 비밀번호의 유효성 검사를 할 때 로직을 재사용할 수 있도록 `type`을 인자로 받아 사용할 수 있도록 훅으로 분리했습니다.
 
 > 참고 파일: [useValidate.js](https://github.com/pre-onboarding-frontend-7-team-3/bestTodoApp/blob/main/src/hooks/useValidate.js)
 
@@ -161,8 +159,8 @@ export const CheckBox = styled.div`
 
 - TodoList 업데이트를 하는 함수가 여러 폴더에 있었습니다.
 - `context api` + `useReducer`를 이용해서 업데이트함수를 `todoItem.jsx`로 모았습니다.
-    - 한 곳에서 관리하기 때문에 유지보수가 편해졌습니다.
-    - props drlling을 하지 않아도 됩니다.
+  - 한 곳에서 관리하기 때문에 유지보수가 편해졌습니다.
+  - props drlling을 하지 않아도 됩니다.
 
 ```javascript
 // todoList.jsx
@@ -198,6 +196,7 @@ const TodoItem = ({ list }) => {
 ...
 }
 ```
+
 <br />
 
 - [ ] 시멘틱한 마크업
@@ -232,26 +231,26 @@ const TodoItem = ({ list }) => {
 
 - [ ] git commit message 컨벤션
 
-| 커밋명 | 내용 |
-| --- | --- |
-| Feat | 파일, 폴더, 새로운 기능 추가 |
-| Fix | 버그 수정 |
-| Docs | 제품 코드 수정 없음 |
-| Style | 코드 형식, 정렬, 주석 등의 변경 |
-| Refactor | 코드 리팩토링 |
-| Test | 테스트 코드 추가 |
-| Chore | 환경설정, 빌드 업무, 패키지 매니저 설정등.. |
-| Hotfix | 치명적이거나 급한 버그 수정 |
+| 커밋명   | 내용                                        |
+| -------- | ------------------------------------------- |
+| Feat     | 파일, 폴더, 새로운 기능 추가                |
+| Fix      | 버그 수정                                   |
+| Docs     | 제품 코드 수정 없음                         |
+| Style    | 코드 형식, 정렬, 주석 등의 변경             |
+| Refactor | 코드 리팩토링                               |
+| Test     | 테스트 코드 추가                            |
+| Chore    | 환경설정, 빌드 업무, 패키지 매니저 설정등.. |
+| Hotfix   | 치명적이거나 급한 버그 수정                 |
 
 - [ ] branch 컨벤션
 
-| 브랜치명 | 내용 |
-| --- | --- |
-| feature | 파일, 폴더, 새로운 기능 추가 |
-| fix | 버그 수정 |
-| docs | 제품 코드 수정 없음 |
-| refactor | 코드 리팩토링 |
-| hotfix | 치명적이거나 급한 버그 수정 |
+| 브랜치명 | 내용                         |
+| -------- | ---------------------------- |
+| feature  | 파일, 폴더, 새로운 기능 추가 |
+| fix      | 버그 수정                    |
+| docs     | 제품 코드 수정 없음          |
+| refactor | 코드 리팩토링                |
+| hotfix   | 치명적이거나 급한 버그 수정  |
 
 <br />
 
