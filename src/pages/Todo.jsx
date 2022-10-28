@@ -30,7 +30,7 @@ const Todo = () => {
     <section css={mainContainer}>
       <TodoHeader />
       <TodoContextWrapper>
-        <TodoCreate todoData={todoData} setTodoData={setTodoData} />
+        <TodoCreate />
         <TodoList />
       </TodoContextWrapper>
     </section>
