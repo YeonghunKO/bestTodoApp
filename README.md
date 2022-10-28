@@ -244,7 +244,31 @@ const TodoItem = ({ list }) => {
     </article>
   );
   ```
- 
+  
+  
+- [ ] prop-types 라이브러리로 컴포넌트 prop의 타입을 설정
+
+아래와 같이 컴포넌트의 prop type을 설정하여 타입 에러를 최소화하였습니다.
+
+```js
+// todoItem.jsx
+import PropTypes from "prop-types";
+
+const TodoItem = ({ list }) => {
+  const [modifyToggle, setModifyToggle] = useState(false);
+  const [content, setContent] = useState(list);
+  ...
+}
+
+TodoItem.propTypes = {
+  list: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    isCompleted: PropTypes.bool.isRequired,
+    todo: PropTypes.string.isRequired,
+    userId: PropTypes.number.isRequired,
+  }),
+};
+```
 
 <br />
 
