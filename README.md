@@ -208,8 +208,9 @@ const TodoItem = ({ list }) => {
 
 ```
 📦 src
-├── 📂 api
-├── 📂 component
+├── 📂 api // 공통 API 관리
+├── 📂 context // context API 관리 
+├── 📂 component // 공통 컴포넌트 관리
 │   ├── 📂 auth
 │   │    ├── 📄 Login
 │   │    └── 📄 SignUP
@@ -218,11 +219,11 @@ const TodoItem = ({ list }) => {
 │   │    ├── 📄 TodoCreate
 │   │    ├── 📄 TodoList
 │   │    └── 📄 TodoItem
-├── 📂 hooks
-├── 📂 pages
+├── 📂 hooks // 로그인과 회원가입 공통처리, 유효한 사용자 인증 등 custom hook 관리
+├── 📂 pages // 페이지 관리
 │   ├── 📄 auth
 │   └── 📄 todo
-└── 📂 utils
+└── 📂 utils // 공통적으로 사용되는 util 함수 관리
 
 ```
 
