@@ -199,7 +199,73 @@ const TodoItem = ({ list }) => {
 
 <br />
 
-- [ ] 시멘틱한 마크업
+- [ ] 검색 엔진 최적화(SEO)와 가독성을 위해 시맨틱 마크업 적극 활용하였습니다.
+
+```js
+// html.js
+   <main id="root"></main>
+```
+
+```js
+// Auth.jsx
+  return (
+    <section css={mainContainer}>
+      <SignUp onOpen={onOpen} onClose={onClose} />
+      <Login isShown={isShown} onOpen={onOpen} />
+    </section>
+  );
+ ```
+ 
+ ```js
+ // todoHeader/index.jsx 
+   return (
+    <header css={todoHeaderLabelCss}>
+      <label> Todo List</label>
+      <button
+        css={todoHeaderLogoutBtnCss}
+        onClick={() => {
+          storage.remove("access_token");
+          navigate("/");
+        }}
+      >
+        로그아웃
+      </button>
+    </header>
+  );
+ ```
+ 
+ ```js
+   return (
+    <article css={todoWrapper}>
+      {todoData?.map((list) => (
+        <TodoItem key={list.id} list={list} />
+      ))}
+    </article>
+  );
+  ```
+  
+  
+- [ ] prop-types 라이브러리로 컴포넌트 prop의 타입을 설정
+
+아래와 같이 컴포넌트의 prop type을 설정하여 타입 에러를 최소화하였습니다.
+
+```js
+// todoItem.jsx
+import PropTypes from "prop-types";
+
+const TodoItem = ({ list }) => {
+  ...
+}
+
+TodoItem.propTypes = {
+  list: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    isCompleted: PropTypes.bool.isRequired,
+    todo: PropTypes.string.isRequired,
+    userId: PropTypes.number.isRequired,
+  }),
+};
+```
 
 <br />
 
@@ -207,8 +273,9 @@ const TodoItem = ({ list }) => {
 
 ```
 📦 src
-├── 📂 api
-├── 📂 component
+├── 📂 api // 공통 API 관리
+├── 📂 context // context API 관리 
+├── 📂 component // 공통 컴포넌트 관리
 │   ├── 📂 auth
 │   │    ├── 📄 Login
 │   │    └── 📄 SignUP
@@ -217,11 +284,11 @@ const TodoItem = ({ list }) => {
 │   │    ├── 📄 TodoCreate
 │   │    ├── 📄 TodoList
 │   │    └── 📄 TodoItem
-├── 📂 hooks
-├── 📂 pages
+├── 📂 hooks // 로그인과 회원가입 공통처리, 유효한 사용자 인증 등 custom hook 관리
+├── 📂 pages // 페이지 관리
 │   ├── 📄 auth
 │   └── 📄 todo
-└── 📂 utils
+└── 📂 utils // 공통적으로 사용되는 util 함수 관리
 
 ```
 

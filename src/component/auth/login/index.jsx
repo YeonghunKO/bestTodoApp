@@ -6,9 +6,11 @@ import notice from "../../../utils/noticeUtils";
 import useSignForm from "../../../hooks/useSignForm";
 import * as authSytle from "../authStyle";
 import { LoginContainer, loginErrorWrapper, loginLabelCss } from "./style";
+
 import { setItem } from "../../../utils/storage";
 import { TOKEN_STORAGE_KEY } from "../../../constants/storage";
 import PropTypes from "prop-types";
+
 
 const Login = ({ isShown, onOpen }) => {
   const navigate = useNavigate();
@@ -25,7 +27,9 @@ const Login = ({ isShown, onOpen }) => {
     loginApi(userInfo.email, userInfo.password)
       .then((res) => {
         notice("success", "로그인 성공");
+
         setItem(TOKEN_STORAGE_KEY, res.data.access_token);
+
         navigate("/todo");
       })
       .catch((err) => {
