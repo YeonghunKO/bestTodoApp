@@ -203,48 +203,47 @@ const TodoItem = ({ list }) => {
 
 ```js
 // html.js
-   <main id="root"></main>
+<main id="root"></main>
 ```
 
 ```js
 // Auth.jsx
-  return (
-    <section css={mainContainer}>
-      <SignUp onOpen={onOpen} onClose={onClose} />
-      <Login isShown={isShown} onOpen={onOpen} />
-    </section>
-  );
- ```
- 
- ```js
- // todoHeader/index.jsx 
-   return (
-    <header css={todoHeaderLabelCss}>
-      <label> Todo List</label>
-      <button
-        css={todoHeaderLogoutBtnCss}
-        onClick={() => {
-          storage.remove("access_token");
-          navigate("/");
-        }}
-      >
-        로그아웃
-      </button>
-    </header>
-  );
- ```
- 
- ```js
-   return (
-    <article css={todoWrapper}>
-      {todoData?.map((list) => (
-        <TodoItem key={list.id} list={list} />
-      ))}
-    </article>
-  );
-  ```
-  
-  
+return (
+  <section css={mainContainer}>
+    <SignUp onOpen={onOpen} onClose={onClose} />
+    <Login isShown={isShown} onOpen={onOpen} />
+  </section>
+);
+```
+
+```js
+// todoHeader/index.jsx
+return (
+  <header css={todoHeaderLabelCss}>
+    <label> Todo List</label>
+    <button
+      css={todoHeaderLogoutBtnCss}
+      onClick={() => {
+        storage.remove("access_token");
+        navigate("/");
+      }}
+    >
+      로그아웃
+    </button>
+  </header>
+);
+```
+
+```js
+return (
+  <article css={todoWrapper}>
+    {todoData?.map((list) => (
+      <TodoItem key={list.id} list={list} />
+    ))}
+  </article>
+);
+```
+
 - [ ] prop-types 라이브러리로 컴포넌트 prop의 타입을 설정
 
 아래와 같이 컴포넌트의 prop type을 설정하여 타입 에러를 최소화하였습니다.
@@ -274,7 +273,7 @@ TodoItem.propTypes = {
 ```
 📦 src
 ├── 📂 api // 공통 API 관리
-├── 📂 context // context API 관리 
+├── 📂 context // context API 관리
 ├── 📂 component // 공통 컴포넌트 관리
 │   ├── 📂 auth
 │   │    ├── 📄 Login
@@ -345,3 +344,5 @@ test from main branch
 test from hot fix!
 
 test from main branch 3
+
+test from hot fix 2
