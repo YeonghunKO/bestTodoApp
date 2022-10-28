@@ -200,7 +200,51 @@ const TodoItem = ({ list }) => {
 ```
 <br />
 
-- [ ] 시멘틱한 마크업
+- [ ] 검색 엔진 최적화(SEO)와 가독성을 위해 시맨틱 마크업 적극 활용하였습니다.
+
+```js
+// html.js
+   <main id="root"></main>
+```
+
+```js
+// Auth.jsx
+  return (
+    <section css={mainContainer}>
+      <SignUp onOpen={onOpen} onClose={onClose} />
+      <Login isShown={isShown} onOpen={onOpen} />
+    </section>
+  );
+ ```
+ 
+ ```js
+ // todoHeader/index.jsx 
+   return (
+    <header css={todoHeaderLabelCss}>
+      <label> Todo List</label>
+      <button
+        css={todoHeaderLogoutBtnCss}
+        onClick={() => {
+          storage.remove("access_token");
+          navigate("/");
+        }}
+      >
+        로그아웃
+      </button>
+    </header>
+  );
+ ```
+ 
+ ```js
+   return (
+    <article css={todoWrapper}>
+      {todoData?.map((list) => (
+        <TodoItem key={list.id} list={list} />
+      ))}
+    </article>
+  );
+  ```
+ 
 
 <br />
 
