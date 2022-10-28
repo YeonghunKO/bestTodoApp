@@ -1,6 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
 import { useIsShown } from "../hooks/useIsShown";
 import { mainContainer } from "../shared/globalStyle";
 import Login from "../component/auth/login";
